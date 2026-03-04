@@ -1,26 +1,3 @@
-[[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[packages]
-zhinst = "~=26.1.2"
-zhinst-core = "~=26.1.2"
-zhinst-utils = "~=0.7.1"
-zhinst-toolkit = "~=1.3.0"
-pandas = "3.0.1"
-
-[dev-packages]
-sphinx = "*"
-ruff = "*"
-
-[requires]
-python_version = "3.14"
-
-[pipenv]
-allow_prereleases = false
-disable_pip_input = true
-sort_pipfile = true
-
-[scripts]
-start = "python src/mfia-cv"
+version https://git-lfs.github.com/spec/v1
+oid sha256:aa7356efec4b2d6955f4f2c5672506399b8031fdc8c73210abd1b1ba73dd67b0
+size 398
