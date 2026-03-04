@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1b3c06c8b28482c573efeb54b244dc11e19ef73868717300ea3534e19b6c3c33
-size 1193
+import sys
+from typing import Final
+from logging import getLogger, basicConfig, INFO
+from zhinst.toolkit import Session
+from zhinst.toolkit.exceptions import ToolkitError, ValidationError
+from zhinst.core.errors import *
+
+logging: Final[str] = getLogger(__name__)
+basicConfig(stream=sys.stderr, level=INFO)
+
+DEVID: Final[str] = 'dev7898'
+NOM: Final[str] = f'mf-{DEVID}'
+HOSTS: Final[str] = ('localhost', f'{NOM}.local')
+
+for host in HOSTS:
+    try:
+        session: Session = Session(host)
+    except CoreError:
+        logging.exception('Problème de connexion à %s', host)
+    else:
+        logging.info('Connexion réussie à %s', host)
+        break
+
+for l in session.child_nodes(recursive=True, leavesonly=True):
+    print(l)
+print()
+
+try:
+    appareil = session.connect_device(DEVID)
+
+    appareil.system.identify(True)
+    print(appareil.status.time())
+except ConnectionError:
+    logging.exception('Connexion avec %s via %s impossible.', DEVID, HOST)
+except TimeoutError:
+    logging.exception('Délai de communication avec %s via %s dépassé.', DEVID, HOST)
+except CoreError:
+    logging.exception('Problème interne du module zhinst')
+finally:
+    session.disconnect_device(DEVID)
