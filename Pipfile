@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+zhinst = "26.1.2"
+pandas = "3.0.1"
+
+[dev-packages]
+sphinx = "*"
+ruff = "*"
+
+[requires]
+python_version = "3.14"
+
+[pipenv]
+allow_prereleases = false
+disable_pip_input = true
+sort_pipfile = true
+
+[scripts]
+start = "python src/mfia-cv"
