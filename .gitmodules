@@ -1,0 +1,6 @@
+[submodule "lib/zhinst/zhinst-toolkit"]
+	path = lib/zhinst/zhinst-toolkit
+	url = https://github.com/zhinst/zhinst-toolkit.git
+[submodule "lib/zhinst/zhinst-utils"]
+	path = lib/zhinst/zhinst-utils
+	url = https://github.com/zhinst/zhinst-utils.git
