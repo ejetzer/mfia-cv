@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: mfia-cv
+message: >-
+  Si vous utilisez ce logiciel à l'extérieur du cours
+  PHS8302, svp utilisez ce fichier pour le citer de manière
+  appropriée.
+type: software
+authors:
+  - given-names: Émile
+    family-names: Jetzer
+    email: emile.jetzer@polymtl.ca
+    affiliation: Polytechnique Montréal
+    orcid: 'https://orcid.org/0009-0001-4576-4480'
+  - given-names: Jacques
+    family-names: Massicotte
+    email: jacques-2.massicotte@polymtl.ca
+    affiliation: Polytechnique Montréal
+  - name: Polytechnique Montréal
+    address: 2500 ch de Polytechnique
+    city: Montréal
+    country: CA
+    post-code: H3T 1J4
+    region: Québec
+repository-code: 'https://github.com/ejetzer/mfia-cv'
+license: AGPL-3.0
