@@ -4,3 +4,6 @@
 [submodule "lib/zhinst/zhinst-utils"]
 	path = lib/zhinst/zhinst-utils
 	url = https://github.com/zhinst/zhinst-utils.git
+[submodule "lib/h5py/h5py"]
+	path = lib/h5py/h5py
+	url = https://github.com/h5py/h5py
