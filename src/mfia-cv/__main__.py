@@ -14,16 +14,12 @@ HOSTS: Final[str] = ('localhost', f'{NOM}.local')
 
 for host in HOSTS:
     try:
-        session: Session = Session(host)
+        session: Session = Session(host, allow_version_mismatch=True)
     except CoreError:
         logging.exception('Problème de connexion à %s', host)
     else:
         logging.info('Connexion réussie à %s', host)
         break
-
-for l in session.child_nodes(recursive=True, leavesonly=True):
-    print(l)
-print()
 
 try:
     appareil = session.connect_device(DEVID)
@@ -36,5 +32,7 @@ except TimeoutError:
     logging.exception('Délai de communication avec %s via %s dépassé.', DEVID, HOST)
 except CoreError:
     logging.exception('Problème interne du module zhinst')
+else:
+    
 finally:
     session.disconnect_device(DEVID)
